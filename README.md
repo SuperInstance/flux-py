@@ -1,0 +1,20 @@
+# flux-py
+
+Minimal clean-room FLUX bytecode VM in Python. 64 lines, no dependencies.
+
+## Quick Start
+
+```python
+from flux_vm import FluxVM, A2AAgent, Swarm
+
+fact = bytes([0x2B,0x00,0x07,0x00, 0x2B,0x01,0x01,0x00, 0x0A,0x01,0x01,0x00, 0x0F,0x00, 0x06,0x00,0xF6,0xFF, 0x80])
+vm = FluxVM(fact)
+vm.execute()
+print(vm.gp[1])  # 5040
+```
+
+## Running
+
+```bash
+python3 flux_vm.py
+```
